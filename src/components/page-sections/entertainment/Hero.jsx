@@ -1,8 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
+import 'swiper/css/pagination';
 
-import { EffectFade, Autoplay } from "swiper/modules";
+
+import { EffectFade, Autoplay} from "swiper/modules";
 
 const images = [
   {
@@ -34,6 +36,7 @@ function Hero() {
         spaceBetween={30}
         effect={"fade"}
         modules={[EffectFade, Autoplay]}
+        // pagination={true}
         className="mySwiper"
         autoplay={{
           delay: 3500,
