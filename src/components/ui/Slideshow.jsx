@@ -1,10 +1,11 @@
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import 'swiper/css/pagination';
+import "swiper/css/pagination";
 
-
-import { EffectFade, Autoplay} from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
+import Image from "next/image";
 
 const images = [
   {
@@ -29,7 +30,7 @@ const images = [
   },
 ];
 
-function Hero() {
+function Slideshow() {
   return (
     <main>
       <Swiper
@@ -46,24 +47,23 @@ function Hero() {
         {images.map((item, index) => {
           return (
             <SwiperSlide key={index} className="relative">
-              <img
+              <Image
                 src={item.img}
                 alt={item.name}
-                className="w-full h-[100svh] object-cover object-center"
+                width={5000}
+                height={1000}
+                className="w-full h-[30svh] object-cover"
               />
-              <div className="absolute bg-black w-screen h-screen top-0 left-0 opacity-40"></div>
-              <section className="absolute top-[50%] left-[50%] text-white translate-x-[-50%] translate-y-[-50%]">
-              <p className="text-clash uppercase text-8xl font-bold tracking-widest py-5">Neowec</p>
-                <p className="text-2xl lg:text-3xl uppercase text-clash tracking-wide text-center">
-                  {item.name}
+              <div className="absolute bg-black w-screen h-screen top-0 left-0 opacity-70"></div>
+              <section className="absolute top-[50%] left-[0] text-white translate-y-[-50%] p-5">
+                <h1 className="text-2xl md:text-3xl font-bold">
+                  World-Class Solutions For Everyone.
+                </h1>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
+                  earum possimus est? Magnam aut dignissimos totam omnis
+                  excepturi. Voluptatum, itaque.
                 </p>
-                {/* <Link href={item.href}> */}
-                <a href={item.href}>
-                  <p className="border px-4 py-2 text-center w-[150px] mx-auto my-2 lg:my-5 hover:scale-110 ease duration-500 text-clash">
-                    EXPLORE
-                  </p>
-                </a>
-                {/* </Link> */}
               </section>
             </SwiperSlide>
           );
@@ -73,4 +73,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Slideshow;
